@@ -14,12 +14,12 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem; /* Keep padding for content spacing */
-  width: 100%;
-  box-sizing: border-box; /* Ensure it fits the screen width */
+  padding: 1rem;
   position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap; /* Allows nav items to wrap on smaller screens */
 }
 
 nav .logo {
@@ -37,6 +37,18 @@ nav ul li a {
   text-decoration: none;
 }
 
+/* Adjust the navigation for mobile */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stack the menu items vertically */
+    gap: 0.5rem;
+  }
+
+  nav .logo {
+    margin-bottom: 1rem; /* Adds space between the logo and the menu items */
+  }
+}
+
 /* Hero Section */
 .hero {
   background: url('LU.png') no-repeat center center/cover;
@@ -47,6 +59,7 @@ nav ul li a {
   align-items: center;
   text-align: center;
   color: #4682b4;
+  padding: 1rem;
 }
 
 .hero h1 {
@@ -66,17 +79,12 @@ nav ul li a {
 .features {
   padding: 4rem 2rem;
   background-color: #fff;
-  height: 100vh; /* Full screen height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .features-container {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows features to wrap on smaller screens */
 }
 
 .feature-item {
@@ -88,43 +96,34 @@ nav ul li a {
 /* Gallery Section */
 .gallery {
   padding: 4rem 2rem;
-  height: 100vh; /* Full screen height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .gallery-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap; /* Allows images to wrap on smaller screens */
 }
 
 .gallery-container img {
   max-width: 300px;
+  width: 100%; /* Ensures images don't overflow on smaller screens */
   border-radius: 8px;
 }
 
 /* Download Section */
 .download {
   padding: 4rem 2rem;
-  color: #4682b4;
+  color: #fff;
   text-align: center;
-  background-color: #FFFF;
-  height: 100vh; /* Full screen height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
+  background: url('B.png') no-repeat center center/cover;
 }
 
 .download-btn {
   margin-top: 1rem;
   padding: 0.75rem 2rem;
   background-color: #fff;
-  color: #007bff;
+  color: #4682b4;
   text-decoration: none;
   border: none;
 }
@@ -167,4 +166,29 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+/* Media Queries for Mobile Screens */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download {
+    padding: 2rem 1rem;
+  }
+
+  #contact-form {
+    width: 90%; /* Adjust the width to fit on smaller screens */
+  }
 }
