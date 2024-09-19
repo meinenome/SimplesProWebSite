@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice App Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">Invoice App Generator</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <h1></h1>
+      <p>Managing invoices in a simple way.</p>
+      <a href="#download" class="hero-btn">Get Started</a>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <h2>App Features</h2>
+      <div class="features-container">
+        <div class="feature-item">
+          <h3>Custom Invoices</h3>
+          <p>
+            Create invoices tailored to your business needs and follow up with
+            Total invoices generated.
+          </p>
+        </div>
+        <div class="feature-item">
+          <h3>Save & Share</h3>
+          <p>Save your invoices for future use and share them instantly.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Quick Calculations</h3>
+          <p>
+            Let SimplesPro handle calculations including GST, expenses, and
+            totals.
+          </p>
+        </div>
+        <div class="feature-item">
+          <h3>Add Photos</h3>
+          <p>Add photos of the work done.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Visually follow your invoicing progress</h3>
+          <p>With our graphics you can visualize the invoices changes .</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <h2>App Screenshots</h2>
+      <div class="gallery-container">
+        <img src="1.jpg" alt="App Screenshot 1" />
+        <img src="2.jpg" alt="App Screenshot 2" />
+        <img src="3.jpg" alt="App Screenshot 3" />
+        <img src="4.jpg" alt="App Screenshot4" />
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+      <h2>Download the App</h2>
+      <p>Available now on the iOS App Store.</p>
+      <a
+        href="https://apps.apple.com/au/app/simplespro/id6498627150"
+        class="download-btn"
+        >Download on App Store</a
+      >
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <!-- Send Email Button -->
+        <a href="#" id="send-message-btn" class="button" onclick="sendEmail()"
+          >Send Message</a
+        >
+      </form>
+    </section>
+
+    <script>
+      function sendEmail() {
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Create mailto link
+        const mailtoLink = `mailto:danmeunome@gmail.com.com?subject=Message from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+
+        // Open mail client
+        window.location.href = mailtoLink;
+      }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Invoice App Generator. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
